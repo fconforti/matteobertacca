@@ -1,0 +1,10 @@
+[Unit]
+Description=matteobertacca: email a Filippo, %i non è andato a buon fine
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/personal/matteobertacca
+# ALERT_EMAIL e SMTP_PASSWORD (erin secret set matteobertacca ...).
+EnvironmentFile=%h/.secrets/matteobertacca.env
+# Python di sistema, solo libreria standard: l'avviso deve partire anche se il resto è rotto.
+ExecStart=/usr/bin/python3 -I %h/personal/matteobertacca/ops/notifica.py --failed-unit %i

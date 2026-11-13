@@ -2,6 +2,7 @@
 Description=matteobertacca: articolo della settimana
 After=network-online.target
 Wants=network-online.target
+OnFailure=matteobertacca-avviso@%n.service
 
 [Service]
 Type=oneshot
