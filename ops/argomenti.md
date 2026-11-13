@@ -5,7 +5,7 @@ e lo spunta aggiungendo lo slug. Puoi riordinare, aggiungere o togliere righe qu
 Se la lista è vuota, il job sceglie da solo un argomento nuovo, adatto alla stagione, e lo aggiunge qui.
 
 - [x] Mal di schiena e freddo: perché d'inverno la schiena si blocca più spesso (Schiena) → mal-di-schiena-freddo-inverno
-- [ ] Colpo di frusta dopo un tamponamento: cosa fare nelle settimane successive (Collo e testa)
+- [x] Colpo di frusta dopo un tamponamento: cosa fare nelle settimane successive (Collo e testa) → colpo-di-frusta-dopo-tamponamento
 - [ ] Gomito del tennista e del padel: dolore all'esterno del gomito (Spalle e articolazioni)
 - [ ] Mal di schiena nei bambini e negli adolescenti: zaino, crescita, sport (Donna e età)
 - [ ] Vertigini e cervicale: cosa c'entra il collo e quando serve il medico (Collo e testa)
