@@ -28,7 +28,10 @@ ALLOWED='Read,Glob,Grep,Write(src/content/articoli/**),Edit(src/content/articoli
 
 log "avvio claude"
 set +e
+# acceptEdits: le scritture dentro il repo passano senza prompt (il 2026-11-13 una regola Write(...) è stata
+# negata senza motivo chiaro). Il controllo dopo il run scarta comunque ogni file fuori da quelli previsti.
 claude -p "$PROMPT" \
+  --permission-mode acceptEdits \
   --allowedTools "$ALLOWED" \
   --disallowedTools 'Bash(git:*),WebFetch,WebSearch' \
   --max-turns 60 \

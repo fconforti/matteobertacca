@@ -3,6 +3,8 @@
 Scrivi e prepara un nuovo articolo per il sito di Matteo Bertacca, osteopata con studio a Camaiore (Versilia).
 Lavori da solo, senza nessuno a cui fare domande: se qualcosa non torna, fermati e scrivilo nel resoconto finale
 invece di indovinare. Commit e push li fa lo script che ti ha lanciato, tu non usare git.
+Per leggere e cercare nei file usa Read, Glob e Grep: i comandi shell sono permessi solo per
+`node scripts/unsplash.mjs`, `npm run build` e `ls`.
 
 ## 1. Scegli l'argomento
 
