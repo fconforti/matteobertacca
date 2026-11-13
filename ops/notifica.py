@@ -23,6 +23,7 @@ import subprocess
 import sys
 from datetime import datetime
 from email.message import EmailMessage
+from email.utils import formatdate, make_msgid
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -76,9 +77,13 @@ def send(subject: str, body: str) -> None:
     if not to or not password:
         sys.exit("ALERT_EMAIL o SMTP_PASSWORD mancanti: erin secret set matteobertacca ALERT_EMAIL / SMTP_PASSWORD")
     msg = EmailMessage()
-    msg["From"] = f"matteobertacca.com <{to}>"
+    # Nome del mittente senza punti: «matteobertacca.com» sembrava un altro dominio e Gmail ha rifiutato
+    # la copia inoltrata (550 5.7.30, DKIM). Date e Message-ID esplicite per lo stesso motivo.
+    msg["From"] = f"Sito Matteo Bertacca <{to}>"
     msg["To"] = to
     msg["Subject"] = subject
+    msg["Date"] = formatdate(localtime=True)
+    msg["Message-ID"] = make_msgid(domain=to.split("@")[-1])
     msg.set_content(body)
     with smtplib.SMTP_SSL(os.environ.get("SMTP_HOST", "smtp.gmail.com"), 465,
                           context=ssl.create_default_context(), timeout=30) as smtp:
