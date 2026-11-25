@@ -1,0 +1,77 @@
+---
+import Base from '../layouts/Base.astro';
+import { site, href, whatsappUrl } from '../site';
+
+// Aggiorna la data quando cambi il testo o il sito inizia a usare servizi esterni
+// (analytics, mappe, moduli, video incorporati): in quel caso il testo va rivisto.
+const updated = new Date('2026-11-25');
+const updatedLabel = updated.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+
+<Base title="Privacy e cookie" description={`Come ${site.name} tratta i dati di chi visita il sito e di chi lo contatta. Il sito non usa cookie.`} bodyClass="page-article">
+  <div class="article-wrap">
+  <article class="article">
+    <div class="article-top">
+    <header>
+      <span class="eyebrow">Informativa</span>
+      <h1>Privacy e cookie</h1>
+      <p class="lead">Questo sito non usa cookie, non ha statistiche di visita e non contiene moduli. Qui sotto spiego quali dati passano comunque e cosa ne faccio.</p>
+      <div class="meta"><span>Aggiornata il {updatedLabel}</span></div>
+    </header>
+    </div>
+    <div class="article-body">
+    <div class="content">
+      <h2>Chi è il titolare</h2>
+      <p>
+        Il titolare del trattamento è {site.name}, {site.profession.toLowerCase()} a {site.contact.city} ({site.contact.province}).
+        Per qualsiasi domanda sui tuoi dati puoi scrivermi su <a href={whatsappUrl} target="_blank" rel="noopener">WhatsApp</a> o chiamarmi al <a href={`tel:${site.contact.phone.replace(/\s/g, '')}`}>{site.contact.phoneDisplay}</a>.
+      </p>
+
+      <h2>Quando visiti il sito</h2>
+      <p>
+        Le pagine sono statiche: caratteri e immagini sono ospitati sul sito stesso, non vengono caricati da Google o da altri servizi,
+        e non c'è nessuno strumento di analisi delle visite o di pubblicità.
+      </p>
+      <p>
+        Il sito è ospitato da GitHub Pages (GitHub, Inc., Stati Uniti). Come ogni server web, GitHub registra per motivi tecnici e di
+        sicurezza alcuni dati della connessione, come l'indirizzo IP e il browser usato. Io non ho accesso a questi registri.
+        GitHub aderisce all'EU-U.S. Data Privacy Framework; i dettagli sono nella sua <a href="https://docs.github.com/it/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">informativa sulla privacy</a>.
+      </p>
+
+      <h2>Cookie</h2>
+      <p>
+        Il sito non installa cookie, né tecnici né di profilazione, e non salva nulla nel tuo browser.
+        Per questo non trovi il banner dei cookie.
+      </p>
+
+      <h2>Quando mi contatti</h2>
+      <p>
+        Se mi scrivi su WhatsApp o mi chiami, uso il tuo nome, il numero e quello che mi racconti solo per risponderti e per fissare
+        l'appuntamento. Non li cedo a nessuno e non li uso per mandarti pubblicità. La base giuridica è la tua richiesta
+        (art. 6, par. 1, lett. b del GDPR).
+      </p>
+      <p>
+        WhatsApp è un servizio di WhatsApp Ireland Ltd. (gruppo Meta), che tratta i dati secondo la propria <a href="https://www.whatsapp.com/legal/privacy-policy-eea" rel="noopener">informativa</a>.
+        Se preferisci, puoi semplicemente telefonarmi.
+      </p>
+      <p>
+        Nei messaggi non serve mandare referti o informazioni sulla tua salute: ne parliamo con calma alla visita.
+      </p>
+
+      <h2>Link ad altri siti</h2>
+      <p>
+        Le foto degli articoli vengono da Unsplash e i crediti rimandano al loro sito. Se segui un link verso un altro sito,
+        valgono le regole di quel sito.
+      </p>
+
+      <h2>I tuoi diritti</h2>
+      <p>
+        Puoi chiedermi in qualsiasi momento di vedere, correggere o cancellare i dati che ho su di te, di limitarne l'uso o di
+        opporti al trattamento (artt. 15–22 del GDPR). Se pensi che i tuoi dati siano trattati in modo scorretto puoi presentare
+        reclamo al <a href="https://www.garanteprivacy.it" rel="noopener">Garante per la protezione dei dati personali</a>.
+      </p>
+    </div>
+    </div>
+  </article>
+  </div>
+</Base>
